@@ -1,3 +1,5 @@
+# metadata of the entire project
+
 [project]
 name = "ai-trip-planner-agent"
 version = "0.1.0"
