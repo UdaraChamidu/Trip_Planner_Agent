@@ -24,3 +24,9 @@
 
 ### to check the all commands that i have entered
 ```Get-History```
+
+## install requirements
+```uv pip install -r requirements.txt```
+
+- change the setup.py file according to chatgpt.(because of an errer when installing requirements)
+

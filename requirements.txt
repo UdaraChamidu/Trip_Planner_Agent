@@ -1,0 +1,22 @@
+langchain
+langchain-community
+langchain-experimental
+fastapi
+python-dotenv
+streamlit
+uvicorn
+pydantic
+httpx
+requests
+langchain_google_community
+langchain_tavily
+langchain_groq
+langchain_openai
+langgraph
+langchain-google-community[places]
+
+
+-e .  # for all local packages
+# when we run the requirements folder, when the -e start to run, automatically setup.py triggers.
+# it will download the entire packege into a single folder
+# after that no need to mention any roots or paths of any folders while importing in my project.
