@@ -14,7 +14,7 @@ langchain_groq
 langchain_openai
 langgraph
 langchain-google-community[places]
-
+langchain-openai
 
 -e .  # for all local packages
 # when we run the requirements folder, when the -e start to run, automatically setup.py triggers.
