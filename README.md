@@ -30,3 +30,6 @@
 
 - change the setup.py file according to chatgpt.(because of an errer when installing requirements)
 
+## to run
+```streamlit run streamlit_app.py```
+```uvicorn main:app --reload--port 8000 ```
