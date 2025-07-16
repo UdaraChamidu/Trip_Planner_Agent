@@ -7,7 +7,7 @@ This project implements an AI agent using **LangGraph**, **FastAPI**, and **Open
 ## 🚀 Features
 
 - ✅ Agentic reasoning via LangGraph
-- ✅ OpenAI LLM integration (`gpt-4o`, `gpt-3.5-turbo`, etc.)
+- ✅ OpenAI LLM integration (`gpt-4o`)
 - ✅ FastAPI-powered backend with RESTful API
 - ✅ Cross-Origin Resource Sharing (CORS) support
 - ✅ Automatically saves a visual representation of the agent's decision graph
