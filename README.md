@@ -1,6 +1,6 @@
 # 🤖 Travel Assistant Agent with LangGraph + FastAPI + OpenAI (Ongoing)
 
-This project implements an AI agent using **LangGraph**, **FastAPI**, and **OpenAI**, designed to handle complex user queries through an agentic workflow. The backend processes questions using a graph-based reasoning flow and returns a natural-language response.
+This project implements an AI agent using **LangGraph**, **FastAPI**, and **OpenAI**, designed to handle complex user queries through an agentic workflow. The backend processes questions using a graph based reasoning flow and returns a natural language response.
 
 ---
 
