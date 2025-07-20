@@ -52,3 +52,6 @@ This project implements an AI agent using **LangGraph**, **FastAPI**, and **Open
 ## to run
 ```streamlit run streamlit_app.py```
 ```uvicorn main:app --reload--port 8000 ```
+
+
+## Deployment part will be done with LLMops
