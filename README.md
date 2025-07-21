@@ -9,7 +9,7 @@ This project implements an AI agent using **LangGraph**, **FastAPI**, and **Open
 - ✅ Agentic reasoning via LangGraph
 - ✅ OpenAI LLM integration (`gpt-4o`)
 - ✅ FastAPI-powered backend with RESTful API
-- ✅ Cross-Origin Resource Sharing (CORS) support
+- ✅ Cross-Origin Resource Sharing (CORS) support.
 - ✅ Automatically saves a visual representation of the agent's decision graph
 - ✅ Easily extensible to other providers like Groq (currently disabled)
 
