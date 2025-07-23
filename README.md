@@ -1,3 +1,22 @@
+# 🤖 Travel Assistant Agent with LangGraph + FastAPI + OpenAI and LLMOps (Ongoing)
+
+This project implements an AI agent using **LangGraph**, **FastAPI**, and **OpenAI**, designed to handle complex user queries through an agentic workflow. The backend processes questions using a graph based reasoning flow and returns a natural language response.
+
+---
+
+## 🚀 Features
+
+- ✅ Agentic reasoning via LangGraph
+- ✅ OpenAI LLM integration (`gpt-4o`)
+- ✅ FastAPI-powered backend with RESTful API
+- ✅ Cross-Origin Resource Sharing (CORS) support.
+- ✅ Automatically saves a visual representation of the agent's decision graph
+- ✅ Easily extensible to other providers like Groq (currently disabled)
+
+---
+
+## ⚙️ Setup Instructions
+
 ### install uv in cmd
 ```pip install uv```
 
@@ -33,3 +52,6 @@
 ## to run
 ```streamlit run streamlit_app.py```
 ```uvicorn main:app --reload--port 8000 ```
+
+
+## Deployment part will be done with LLMops
