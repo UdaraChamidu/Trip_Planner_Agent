@@ -12,13 +12,17 @@ BASE_URL = "http://localhost:8000"  # Backend endpoint, base url
 
 # set configuration
 st.set_page_config(
-    page_title="🌍 Travel Planner Agentic Application",
+    page_title="🌍 Travel Planner Ai",
     page_icon="🌍",
     layout="centered",
     initial_sidebar_state="expanded",
 )
 
-st.title("🌍 Travel Planner Agentic Application")
+
+st.title("🌍 Travel Planner AI Agent")
+st.write("Welcome to the Travel Planner AI Agent !")
+st.write("Plan your Trip in Minutes with AI")
+st.write("")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -42,7 +46,7 @@ if submit_button and user_input.strip():
 
         if response.status_code == 200:
             answer = response.json().get("answer", "No answer returned.")
-            markdown_content = f"""# 🌍 AI Travel Plan
+            markdown_content = f"""# Your Travel Plan
 
             # **Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}  
             # **Created by:** Atriyo's Travel Agent
