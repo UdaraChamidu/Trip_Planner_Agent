@@ -1,9 +1,11 @@
+import re
 import streamlit as st
 import requests
 import datetime
 from fpdf import FPDF
 import base64
 import uuid
+import tempfile
 
 BASE_URL = "http://localhost:8000"
 
@@ -104,21 +106,40 @@ if chat_data["messages"]:
         with st.chat_message("assistant"):
             st.markdown(f"**AI Plan:** {msg['answer']}")
 
+    # Function to remove emojis/special characters
+    def clean_text(text):
+        return re.sub(r'[^\x00-\x7F]+', '', text)
+
     # 📄 Download PDF
-    if st.button("📅 Download Plan as PDF"):
+    if chat_data["messages"]:
         latest_msg = chat_data["messages"][-1]
+
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
         pdf.cell(200, 10, txt="AI Travel Plan", ln=True, align="C")
         pdf.ln(10)
-        pdf.multi_cell(0, 10, f"Question: {latest_msg['question']}\n\nAnswer:\n{latest_msg['answer']}\n\nGenerated on {latest_msg['time']}")
-        pdf.output("travel_plan.pdf")
 
-        with open("travel_plan.pdf", "rb") as f:
-            base64_pdf = base64.b64encode(f.read()).decode("utf-8")
-        pdf_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="travel_plan.pdf">📅 Click here to download your PDF</a>'
-        st.markdown(pdf_link, unsafe_allow_html=True)
+        # Clean and format
+        question = clean_text(latest_msg["question"])
+        answer = clean_text(latest_msg["answer"])
+        time = latest_msg["time"]
+        pdf.multi_cell(0, 10, f"Question: {question}\n\nAnswer:\n{answer}\n\nGenerated on {time}")
+
+        # Save to temp and read bytes
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
+            pdf.output(tmp_file.name)
+            pdf_file_path = tmp_file.name
+
+        with open(pdf_file_path, "rb") as f:
+            pdf_bytes = f.read()
+
+        st.download_button(
+            label="📅 Download Plan as PDF",
+            data=pdf_bytes,
+            file_name="travel_plan.pdf",
+            mime="application/pdf"
+        )
 else:
     st.info("Start a chat to generate a travel plan!")
 
@@ -127,4 +148,5 @@ st.markdown("---")
 st.markdown("<p style='text-align: center;'>Made with ❤️ by Udara</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Powered by OpenAI GPT-4o</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Contact: udara@travelagent.com</p>", unsafe_allow_html=True)
+
 from langchain_core.messages import SystemMessage
