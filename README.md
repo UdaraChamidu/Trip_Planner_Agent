@@ -1,17 +1,79 @@
-# 🤖 Travel Assistant Agent with LangGraph + FastAPI + OpenAI and LLMOps (Ongoing)
+# 🌍 AI-Powered Travel Planner Assistant
 
-This project implements an AI agent using **LangGraph**, **FastAPI**, and **OpenAI**, designed to handle complex user queries through an agentic workflow. The backend processes questions using a graph based reasoning flow and returns a natural language response.
+An intelligent, chat-based travel planning application that combines the power of **GPT-4o**, **real-time data tools**, and **user-friendly UI** to help you plan your trips effortlessly.
 
 ---
 
-## 🚀 Features
+## 🧠 Features
 
-- ✅ Agentic reasoning via LangGraph
-- ✅ OpenAI LLM integration (`gpt-4o`)
-- ✅ FastAPI-powered backend with RESTful API
-- ✅ Cross-Origin Resource Sharing (CORS) support.
-- ✅ Automatically saves a visual representation of the agent's decision graph
-- ✅ Easily extensible to other providers like Groq (currently disabled)
+- 💬 **Chat with AI Agent**: Plan your travel through interactive conversation powered by OpenAI's GPT-4o.
+- 🌤️ **Weather Integration**: Get real-time weather forecasts using OpenWeatherMap.
+- 💱 **Currency Converter**: View live currency exchange rates with Exchangerate-API.
+- 📍 **Place Information Search**: Discover locations and travel destinations via TavilySearch.
+- 🗂️ **Chat History**: View previous chat sessions and continue from where you left off.
+- 🗑️ **Delete Chats**: Clean up or remove outdated sessions easily.
+- 📄 **Download PDF**: Export your final travel plan as a downloadable PDF.
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer | Technologies Used |
+|-------|-------------------|
+| 🧠 AI | [OpenAI GPT-4o](https://platform.openai.com/docs/models/gpt-4o), LangChain, LangGraph |
+| 🌐 Frontend | [Streamlit](https://streamlit.io/) |
+| 🔧 Backend | [FastAPI](https://fastapi.tiangolo.com/) |
+| 🔌 Tools Integration | OpenWeatherMap, Exchangerate-API, TavilySearch |
+| ⚙️ DevOps | LLMOps (ongoing development) |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/ai-travel-planner.git
+cd ai-travel-planner
+```
+
+### 2. Set Up Environment
+Create a .env file and add the following keys:
+```bash
+OPENAI_API_KEY=your_openai_key
+OPENWEATHER_API_KEY=your_open_weather_key
+EXCHANGE_RATE_API_KEY=your_exchange_rate_key
+TAVILY_API_KEY=your_tavily_api_key
+```
+### 3. Install Dependencies and Setup the project.
+
+
+
+## 📁 Project Structure
+
+ai-travel-planner/
+│
+├── backend/
+│   ├── app.py               # FastAPI server
+│   ├── tools/               # Custom tools (weather, currency, place search)
+│   └── ...
+│
+├── frontend/
+│   ├── index.py             # Streamlit app
+│   ├── utils/               # UI and session utilities
+│   └── ...
+│
+├── .env.example             # Environment variable template
+├── README.md
+└── requirements.txt         # Combined dependencies
+
+
+## 📌 Roadmap
+
+ Chat interface with GPT-4o
+ Weather and currency integrations
+ Session history & deletion
+ PDF generation
+ LLMOps monitoring, logging, and model versioning
 
 ---
 
@@ -44,14 +106,13 @@ This project implements an AI agent using **LangGraph**, **FastAPI**, and **Open
 ### to check the all commands that i have entered
 ```Get-History```
 
-## install requirements
+### install requirements
 ```uv pip install -r requirements.txt```
 
 - change the setup.py file according to chatgpt.(because of an errer when installing requirements)
 
-## to run
+### to run
 ```streamlit run streamlit_app.py```
 ```uvicorn main:app --reload--port 8000 ```
 
-
-## Deployment part will be done with LLMops
+### Deployment part will be done with LLMops
