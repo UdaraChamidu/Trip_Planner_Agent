@@ -16,6 +16,11 @@ An intelligent, chat-based travel planning application that combines the power o
 
 ---
 
+## 📸 Screenshots
+<p align="center"> <img width="800" alt="Travel Planner Screenshot" src="https://github.com/user-attachments/assets/e2b81f74-3568-4ef7-a603-b86d76838459" /> </p>
+
+---
+
 ## 🏗️ Tech Stack
 
 | Layer | Technologies Used |
@@ -28,44 +33,28 @@ An intelligent, chat-based travel planning application that combines the power o
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/ai-travel-planner.git
-cd ai-travel-planner
-```
-
-### 2. Set Up Environment
-Create a .env file and add the following keys:
-```bash
-OPENAI_API_KEY=your_openai_key
-OPENWEATHER_API_KEY=your_open_weather_key
-EXCHANGE_RATE_API_KEY=your_exchange_rate_key
-TAVILY_API_KEY=your_tavily_api_key
-```
-### 3. Install Dependencies and Setup the project.
-
-
 
 ## 📁 Project Structure
 
+```
 ai-travel-planner/
-│
-├── backend/
-│   ├── app.py               # FastAPI server
-│   ├── tools/               # Custom tools (weather, currency, place search)
+│                                                                                 
+├── backend/                     # FastAPI backend
+│   ├── app.py                   # FastAPI main app
+│   ├── tools/                   # External API integration tools
 │   └── ...
 │
-├── frontend/
-│   ├── index.py             # Streamlit app
-│   ├── utils/               # UI and session utilities
+├── frontend/                    # Streamlit frontend
+│   ├── streamlit_app.py         # Main UI logic
+│   ├── utils/                   # Session, formatting, and helper functions
 │   └── ...
 │
-├── .env.example             # Environment variable template
-├── README.md
-└── requirements.txt         # Combined dependencies
-
+├── .env.example                 # Sample environment file
+├── README.md                    # Project documentation
+├── requirements.txt             # Python dependencies
+└── setup.py                     # Setup configuration (for package installation)
+```
+---
 
 ## 📌 Roadmap
 
@@ -77,42 +66,62 @@ ai-travel-planner/
 
 ---
 
+
 ## ⚙️ Setup Instructions
 
-### install uv in cmd
+- Clone the Repository
+```bash
+git clone https://github.com/yourusername/ai-travel-planner.git
+cd ai-travel-planner
+```
+
+- Set Up Environment
+Create a .env file and add the following keys:
+```bash
+OPENAI_API_KEY=your_openai_key
+OPENWEATHER_API_KEY=your_open_weather_key
+EXCHANGE_RATE_API_KEY=your_exchange_rate_key
+TAVILY_API_KEY=your_tavily_api_key
+```
+- install uv in cmd
 ```pip install uv```
 
-### create the project folder
+- create the project folder
 ```uv init AI_Travel_Planner```
 - it generate automatically some useful files...
 
-### check python available virsions in uv
+- check python available virsions in uv
 ```uv python list```
 
-### python specific virsion installation ... 
+- python specific virsion installation ... 
 ```uv python install cpython-3.11.0-windows-x86_64-none```  
 - this not worked. so i tried this..
 ```uv venv --python=3.11```
 
-### activate 
+- activate 
 ```.venv\Scripts\activate```
 
-### install  a packege using uv
+- install  a packege using uv
 ```uv pip install langchain```
 
-### to see the current installed packeges
+- to see the current installed packeges
 ```uv pip list```
 
-### to check the all commands that i have entered
+- to check the all commands that i have entered
 ```Get-History```
 
-### install requirements
+- install requirements
 ```uv pip install -r requirements.txt```
 
 - change the setup.py file according to chatgpt.(because of an errer when installing requirements)
 
-### to run
+- to run
 ```streamlit run streamlit_app.py```
 ```uvicorn main:app --reload--port 8000 ```
 
-### Deployment part will be done with LLMops
+---
+
+## 🙌 Deployment part will be done with LLMops
+
+
+
